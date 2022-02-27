@@ -1,0 +1,4 @@
+data/grafana/*
+data/influxdb/*
+data/iobroker/*
+data/zigbee2mqtt/*
