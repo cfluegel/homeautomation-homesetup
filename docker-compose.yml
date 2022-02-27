@@ -1,0 +1,71 @@
+version: "3.9"
+services:
+  mqtt:
+    container_name: mosquitto
+    image: eclipse-mosquitto:latest
+    restart: unless-stopped
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./data/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./data/mosquitto/data:/mosquitto/data
+      - ./data/mosquitto/log:/mosquitto/log
+
+
+  zigbee:
+    container_name: zigbee2mqtt
+    image: koenkk/zigbee2mqtt:latest
+    restart: unless-stopped
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0
+    ports:
+      - 8080:8080
+    environment:
+      - TZ=Europe/Berlin
+    volumes:
+      - ./data/zigbee2mqtt:/app/data
+      - /run/udev:/run/udev:ro
+
+  influxdb:
+    container_name: influxdb
+    image: influxdb:latest
+    restart: unless-stopped
+    user: root
+    ports:
+      - 8086:8086
+    volumes:
+      - ./data/influxdb/data:/var/lib/influxdb2
+      - ./data/influxdb/config:/etc/influxdb2
+    environment:
+      - DOCKER_INFLUXDB_INIT_USERNAME=iobroker
+      - DOCKER_INFLUXDB_INIT_PASSWORD=iobroker
+      - DOCKER_INFLUXDB_INIT_ORG=smarthome
+      - DOCKER_INFLUXDB_INIT_BUCKET=iobroker
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    user: root
+    ports:
+      - 3000:3000
+    volumes:
+      - ./data/grafana:/var/lib/grafana
+
+  iobroker:
+    container_name: iobroker
+    image: buanet/iobroker:latest
+    restart: unless-stopped
+    ports:
+      - 8081:8081
+      - 8082:8082
+      - 1880:1880
+      - 8282:8282
+      # - 80:80                        # for nodered amazon integrataion
+    volumes:
+      - ./data/iobroker:/opt/iobroker
+    # privileged: true                 # for nodered amazon integrataion
+    # ipc: host                        # for nodered amazon integrataion
+    # mac_address: DE:AD:23:00:00:01   # for nodered amazon integrataion
