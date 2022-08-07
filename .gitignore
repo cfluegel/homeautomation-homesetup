@@ -1,6 +1,9 @@
-data/grafana/*
+data/grafana/grafana.db
 data/influxdb/*
 data/iobroker/*
-data/zigbee2mqtt/*
+data/zigbee2mqtt/database.db
+data/zigbee2mqtt/state.json
+data/zigbee2mqtt/log/*
+data/zigbee2mqtt/coordinator_backup.json
 data/mosquitto/data
 data/mosquitto/log

@@ -1,0 +1,57 @@
+homeassistant: false
+permit_join: false
+frontend: true
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://mqtt
+serial:
+  port: /dev/ttyACM0
+advanced:
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
+  legacy_availability_payload: false
+device_options:
+  legacy: false
+devices:
+  '0x00158d0001dd4a2c':
+    friendly_name: TH_Wohnzimmer
+  '0x00158d0001dcfcf1':
+    friendly_name: TH_Schlafzimmer
+  '0x00158d0004851f04':
+    friendly_name: TH_Kueche
+  '0x00158d0001dcfe13':
+    friendly_name: TH_Arbeitszimmer
+  '0x00158d0001dd4a7b':
+    friendly_name: TH_Badezimmer1
+  '0x00158d00079016bd':
+    friendly_name: Motion_Eingang
+    illuminance_precision: 0
+    occupancy_timeout: 15
+    no_occupancy_since: []
+  '0x00158d00078ea366':
+    friendly_name: Motion_Arbeitszimmer
+    occupancy_timeout: 60
+  '0x00158d00082ff9eb':
+    friendly_name: WL_Kueche
+  '0x00158d0007e79171':
+    friendly_name: CS_Tuer_Eingang
+  '0x04cf8cdf3c803335':
+    friendly_name: Outlet_NachttischLampe
+  '0x04cf8cdf3c8031f8':
+    friendly_name: Outlet_Kaffeemaschine
+  '0x00158d0007e78a85':
+    friendly_name: CS_Fenster_Arbeitszimmer_Nord
+  '0x00158d0007e74eeb':
+    friendly_name: CS_Fenster_Arbeitszimmer_Ost
+  '0x00158d0007e5c06d':
+    friendly_name: CS_Fenster_Schlafzimmer_Nord
+  '0x00158d0007e765ae':
+    friendly_name: CS_Fenster_Schlafzimmer_Ost
+  '0x00158d0007e786fd':
+    friendly_name: CS_Fenster_Kueche
+  '0x00158d0007e78a91':
+    friendly_name: CS_Fenster_Badezimmer
+  '0x00158d0006896f48':
+    friendly_name: CS_Fenster_Wonhzimmer_Sued
+  '0x04cf8cdf3c802f6f':
+    friendly_name: Outlet_Arbeitszimmer_Stehlampe
