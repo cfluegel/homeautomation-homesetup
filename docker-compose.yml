@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   mqtt:
-    container_name: mosquitto
+    # container_name: mosquitto
     image: eclipse-mosquitto:latest
     restart: unless-stopped
     ports:
@@ -13,7 +13,7 @@ services:
       - ./data/mosquitto/log:/mosquitto/log
 
   zigbee:
-    container_name: zigbee2mqtt
+    # container_name: zigbee2mqtt
     image: koenkk/zigbee2mqtt:latest
     restart: unless-stopped
     devices:
@@ -25,9 +25,11 @@ services:
     volumes:
       - ./data/zigbee2mqtt:/app/data
       - /run/udev:/run/udev:ro
+    depends_on:
+      - mqtt
 
   influxdb:
-    container_name: influxdb
+    # container_name: influxdb
     image: influxdb:latest
     restart: unless-stopped
     user: root
@@ -44,7 +46,7 @@ services:
       - DOCKER_INFLUXDB_INIT_MODE=setup
 
   grafana:
-    container_name: grafana
+    # container_name: grafana
     image: grafana/grafana:latest
     restart: unless-stopped
     user: root
@@ -54,7 +56,7 @@ services:
       - ./data/grafana:/var/lib/grafana
 
   iobroker:
-    container_name: iobroker
+    # container_name: iobroker
     image: buanet/iobroker:latest
     restart: unless-stopped
     ports:
@@ -68,3 +70,8 @@ services:
     # privileged: true                 # for nodered amazon integrataion
     # ipc: host                        # for nodered amazon integrataion
     # mac_address: DE:AD:23:00:00:01   # for nodered amazon integrataion
+    depends_on:
+      - mqtt
+      - zigbee
+      - grafana
+      - influxdb
