@@ -29,29 +29,36 @@ devices:
     occupancy_timeout: 15
     no_occupancy_since: []
   '0x00158d00078ea366':
-    friendly_name: Motion_Arbeitszimmer
+    friendly_name: Motion_Badezimmer1
     occupancy_timeout: 60
   '0x00158d00082ff9eb':
     friendly_name: WL_Kueche
   '0x00158d0007e79171':
-    friendly_name: CS_Tuer_Eingang
+    friendly_name: CS_Eingang_Tuer
   '0x04cf8cdf3c803335':
-    friendly_name: Outlet_NachttischLampe
+    friendly_name: Outlet_Schlafzimmer_NachttischLampe
   '0x04cf8cdf3c8031f8':
-    friendly_name: Outlet_Kaffeemaschine
+    friendly_name: Outlet_Kueche_Kaffeemaschine
   '0x00158d0007e78a85':
-    friendly_name: CS_Fenster_Arbeitszimmer_Nord
+    friendly_name: CS_Arbeitszimmer_Fenster_Nord
   '0x00158d0007e74eeb':
-    friendly_name: CS_Fenster_Arbeitszimmer_Ost
+    friendly_name: CS_Arbeitszimmer_Fenster_Ost
   '0x00158d0007e5c06d':
-    friendly_name: CS_Fenster_Schlafzimmer_Nord
+    friendly_name: CS_Schlafzimmer_Fenster_Nord
   '0x00158d0007e765ae':
-    friendly_name: CS_Fenster_Schlafzimmer_Ost
+    friendly_name: CS_Schlafzimmer_Fenster_Ost
   '0x00158d0007e786fd':
-    friendly_name: CS_Fenster_Kueche
+    friendly_name: CS_Kueche_Fenster
   '0x00158d0007e78a91':
-    friendly_name: CS_Fenster_Badezimmer
+    friendly_name: CS_Badezimmer_Fenster
   '0x00158d0006896f48':
-    friendly_name: CS_Fenster_Wonhzimmer_Sued
+    friendly_name: CS_Wonhzimmer_Fenster_Sued
   '0x04cf8cdf3c802f6f':
     friendly_name: Outlet_Arbeitszimmer_Stehlampe
+  '0x04cf8cdf3c803122':
+    friendly_name: Outlet_Arbeitszimmer_Arbeitsplatz
+    device_temperature_calibration: 0
+  '0x54ef4410004e4359':
+    friendly_name: Motion_Arbeitszimmer
+  '0x00158d00042676ba':
+    friendly_name: Button_Schlafzimmer_Nachttisch
