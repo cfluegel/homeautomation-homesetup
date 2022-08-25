@@ -10,6 +10,7 @@ advanced:
   homeassistant_legacy_entity_attributes: false
   legacy_api: false
   legacy_availability_payload: false
+  log_level: info
 device_options:
   legacy: false
 devices:
@@ -52,7 +53,7 @@ devices:
   '0x00158d0007e78a91':
     friendly_name: CS_Badezimmer_Fenster
   '0x00158d0006896f48':
-    friendly_name: CS_Wonhzimmer_Fenster_Sued
+    friendly_name: CS_Wonhzimmer_FensterRund_Sued
   '0x04cf8cdf3c802f6f':
     friendly_name: Outlet_Arbeitszimmer_Stehlampe
   '0x04cf8cdf3c803122':
@@ -62,3 +63,15 @@ devices:
     friendly_name: Motion_Arbeitszimmer
   '0x00158d00042676ba':
     friendly_name: Button_Schlafzimmer_Nachttisch
+  '0x00158d000807cd74':
+    friendly_name: '0x00158d000807cd74'
+  '0x54ef4410004e41c7':
+    friendly_name: Motion_Schlafzimmer
+  '0x00158d00085493e1':
+    friendly_name: CS_Wohnzimmer_Fenster_Ost
+  '0x00158d0008649c36':
+    friendly_name: CS_Wohnzimmer_FensterEckig_Sued
+  '0x00158d0004018ac4':
+    friendly_name: Button_Arbeitszimmer
+  '0x00158d0008381a91':
+    friendly_name: TH_Garage
