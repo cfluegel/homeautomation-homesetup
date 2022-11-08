@@ -39,10 +39,10 @@ services:
       - ./data/influxdb/data:/var/lib/influxdb2
       - ./data/influxdb/config:/etc/influxdb2
     environment:
-      - DOCKER_INFLUXDB_INIT_USERNAME=iobroker
-      - DOCKER_INFLUXDB_INIT_PASSWORD=iobroker
+      - DOCKER_INFLUXDB_INIT_USERNAME=smarthome
+      - DOCKER_INFLUXDB_INIT_PASSWORD=securepassword
       - DOCKER_INFLUXDB_INIT_ORG=smarthome
-      - DOCKER_INFLUXDB_INIT_BUCKET=iobroker
+      - DOCKER_INFLUXDB_INIT_BUCKET=smarthome
       - DOCKER_INFLUXDB_INIT_MODE=setup
 
   grafana:
@@ -55,23 +55,23 @@ services:
     volumes:
       - ./data/grafana:/var/lib/grafana
 
-  iobroker:
-    # container_name: iobroker
-    image: buanet/iobroker:latest
-    restart: unless-stopped
-    ports:
-      - 8081:8081
-      - 8082:8082
-      - 1880:1880
-      - 8282:8282
-      # - 80:80                        # for nodered amazon integrataion
-    volumes:
-      - ./data/iobroker:/opt/iobroker
-    # privileged: true                 # for nodered amazon integrataion
-    # ipc: host                        # for nodered amazon integrataion
-    # mac_address: DE:AD:23:00:00:01   # for nodered amazon integrataion
-    depends_on:
-      - mqtt
-      - zigbee
-      - grafana
-      - influxdb
+#   iobroker:
+#     # container_name: iobroker
+#     image: buanet/iobroker:latest
+#     restart: unless-stopped
+#     ports:
+#       - 8081:8081
+#       - 8082:8082
+#       - 1880:1880
+#       - 8282:8282
+#       # - 80:80                        # for nodered amazon integrataion
+#     volumes:
+#       - ./data/iobroker:/opt/iobroker
+#     # privileged: true                 # for nodered amazon integrataion
+#     # ipc: host                        # for nodered amazon integrataion
+#     # mac_address: DE:AD:23:00:00:01   # for nodered amazon integrataion
+#     depends_on:
+#       - mqtt
+#       - zigbee
+#       - grafana
+#       - influxdb
