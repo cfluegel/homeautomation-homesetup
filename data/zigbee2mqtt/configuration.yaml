@@ -36,8 +36,6 @@ devices:
     friendly_name: WL_Kueche
   '0x00158d0007e79171':
     friendly_name: CS_Eingang_Tuer
-  '0x04cf8cdf3c803335':
-    friendly_name: Outlet_Schlafzimmer_NachttischLampe
   '0x04cf8cdf3c8031f8':
     friendly_name: Outlet_Kueche_Kaffeemaschine
   '0x00158d0007e78a85':
@@ -54,8 +52,6 @@ devices:
     friendly_name: CS_Badezimmer_Fenster
   '0x00158d0006896f48':
     friendly_name: CS_Wonhzimmer_FensterRund_Sued
-  '0x04cf8cdf3c802f6f':
-    friendly_name: Outlet_Arbeitszimmer_Stehlampe
   '0x04cf8cdf3c803122':
     friendly_name: Outlet_Arbeitszimmer_Arbeitsplatz
     device_temperature_calibration: 0
@@ -64,7 +60,7 @@ devices:
   '0x00158d00042676ba':
     friendly_name: Button_Schlafzimmer_Nachttisch
   '0x00158d000807cd74':
-    friendly_name: '0x00158d000807cd74'
+    friendly_name: Vibration_Arbeitszimmer_Arbeitstuhl
   '0x54ef4410004e41c7':
     friendly_name: Motion_Schlafzimmer
   '0x00158d00085493e1':
@@ -74,4 +70,41 @@ devices:
   '0x00158d0004018ac4':
     friendly_name: Button_Arbeitszimmer
   '0x00158d0008381a91':
-    friendly_name: TH_Garage
+    friendly_name: TH_Außen_Schlafzimmer_Nord
+  '0x54ef4410004e7c9c':
+    friendly_name: Outlet_Schlafzimmer_NachttischLampe
+  '0x588e81fffee2d642':
+    friendly_name: Light_Arbeitszimmer_Heizung
+  '0xa4c138e0ee201ff8':
+    friendly_name: Outlet_eScooter
+  '0xa4c138e60d038f36':
+    friendly_name: Outlet_Staubsauger
+  '0x00158d000837fadb':
+    friendly_name: TH_Serverkabinett
+  '0x847127fffea0e488':
+    friendly_name: Light_Arbeitszimmer_Tisch
+  '0x588e81fffed86662':
+    friendly_name: Light_Wohnzimmer_Stehlampe_Oben
+  '0x842e14fffe03781d':
+    friendly_name: Light_Wohnzimmer_Stehlampe_Mitte
+  '0x588e81fffef9f1f4':
+    friendly_name: Light_Wohnzimmer_Stehlampe_Unten
+  '0x04cf8cdf3c803335':
+    friendly_name: Outlet_Arbeitszimmer_Drucker
+  '0x54ef4410004e9df2':
+    friendly_name: Outlet_NotInUse1
+  '0x54ef4410004ea369':
+    friendly_name: Outlet_Arbeitszimmer_Stehlampe
+  '0x04cf8cdf3c802f6f':
+    friendly_name: Outlet_NotInUse2
+groups:
+  '1':
+    friendly_name: Light_Wohnzimmer_Stehlampe
+    devices:
+      - 0x588e81fffef9f1f4/1
+      - 0x588e81fffed86662/1
+      - 0x842e14fffe03781d/1
+ota:
+  ikea_ota_use_test_url: false
+  disable_automatic_update_check: true
+  zigbee_ota_override_index_location: index.json
