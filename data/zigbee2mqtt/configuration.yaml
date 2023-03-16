@@ -1,4 +1,4 @@
-homeassistant: false
+homeassistant: true
 permit_join: false
 frontend: true
 mqtt:
@@ -71,14 +71,12 @@ devices:
     friendly_name: Button_Arbeitszimmer
   '0x00158d0008381a91':
     friendly_name: TH_Außen_Schlafzimmer_Nord
-  '0x54ef4410004e7c9c':
-    friendly_name: Outlet_Schlafzimmer_NachttischLampe
   '0x588e81fffee2d642':
     friendly_name: Light_Arbeitszimmer_Heizung
   '0xa4c138e0ee201ff8':
-    friendly_name: Outlet_eScooter
+    friendly_name: Outlet_Wohnzimmer_eScooter
   '0xa4c138e60d038f36':
-    friendly_name: Outlet_Staubsauger
+    friendly_name: Outlet_Wohnzimmer_Staubsauger
   '0x00158d000837fadb':
     friendly_name: TH_Serverkabinett
   '0x847127fffea0e488':
@@ -96,7 +94,13 @@ devices:
   '0x54ef4410004ea369':
     friendly_name: Outlet_Arbeitszimmer_Stehlampe
   '0x04cf8cdf3c802f6f':
-    friendly_name: Outlet_NotInUse2
+    friendly_name: Outlet_Badezimmer1_Lichterkette
+  '0x54ef4410004e7c9c':
+    friendly_name: Outlet_Schlafzimmer_NachttischLamp
+  '0x588e81fffe9c30ce':
+    friendly_name: Light_Wohnzimmer_Esstisch
+  '0xf4b3b1fffe86dfb3':
+    friendly_name: '0xf4b3b1fffe86dfb3'
 groups:
   '1':
     friendly_name: Light_Wohnzimmer_Stehlampe
@@ -104,6 +108,12 @@ groups:
       - 0x588e81fffef9f1f4/1
       - 0x588e81fffed86662/1
       - 0x842e14fffe03781d/1
+  '2':
+    friendly_name: Light_Arbeitszimmer
+    devices:
+      - 0x54ef4410004ea369/1
+      - 0x847127fffea0e488/1
+      - 0x588e81fffee2d642/1
 ota:
   ikea_ota_use_test_url: false
   disable_automatic_update_check: true

@@ -27,34 +27,77 @@ services:
       - /run/udev:/run/udev:ro
     depends_on:
       - mqtt
-
-  influxdb:
-    # container_name: influxdb
-    image: influxdb:latest
-    restart: unless-stopped
-    user: root
-    ports:
-      - 8086:8086
+  mynodered: 
+    depends_on:
+      - mqtt 
+      - zigbee
+    # image: nodered/node-red
+    build: ./build/nodered
+    restart: unless-stopped 
     volumes:
-      - ./data/influxdb/data:/var/lib/influxdb2
-      - ./data/influxdb/config:/etc/influxdb2
+      - ./data/nodered:/data
+    ports:
+      - 1880:1880
     environment:
-      - DOCKER_INFLUXDB_INIT_USERNAME=smarthome
-      - DOCKER_INFLUXDB_INIT_PASSWORD=securepassword
-      - DOCKER_INFLUXDB_INIT_ORG=smarthome
-      - DOCKER_INFLUXDB_INIT_BUCKET=smarthome
-      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - TZ=Europe/Berlin
 
-  grafana:
-    # container_name: grafana
-    image: grafana/grafana:latest
-    restart: unless-stopped
-    user: root
-    ports:
-      - 3000:3000
-    volumes:
-      - ./data/grafana:/var/lib/grafana
-
+#   influxdb:
+#     # container_name: influxdb
+#     image: influxdb:latest
+#     restart: unless-stopped
+#     user: root
+#     ports:
+#       - 8086:8086
+#     volumes:
+#       - ./data/influxdb/data:/var/lib/influxdb2
+#       - ./data/influxdb/config:/etc/influxdb2
+#     environment:
+#       - DOCKER_INFLUXDB_INIT_USERNAME=smarthome
+#       - DOCKER_INFLUXDB_INIT_PASSWORD=securepassword
+#       - DOCKER_INFLUXDB_INIT_ORG=smarthome
+#       - DOCKER_INFLUXDB_INIT_BUCKET=smarthome
+#       - DOCKER_INFLUXDB_INIT_MODE=setup
+# 
+#   grafana:
+#     # container_name: grafana
+#     image: grafana/grafana:latest
+#     restart: unless-stopped
+#     user: root
+#     ports:
+#       - 3000:3000
+#     volumes:
+#       - ./data/grafana:/var/lib/grafana
+# 
+#   homeassistant:
+#     image: ghcr.io/home-assistant/home-assistant:stable
+#     privileged: true 
+#     restart: unless-stopped 
+#     volumes:
+#       - ./data/homeassistant:/config
+#     network_mode: host 
+#     environment: 
+#       - TZ=EUROPE/BERLIN
+#       
+#   iobroker:
+#     # container_name: iobroker
+#     image: buanet/iobroker:latest
+#     restart: unless-stopped
+#     ports:
+#       - 8081:8081
+#       - 8082:8082
+#       - 1880:1880
+#       - 8282:8282
+#       # - 80:80                        # for nodered amazon integrataion
+#     volumes:
+#       - ./data/iobroker:/opt/iobroker
+#     # privileged: true                 # for nodered amazon integrataion
+#     # ipc: host                        # for nodered amazon integrataion
+#     # mac_address: DE:AD:23:00:00:01   # for nodered amazon integrataion
+#     depends_on:
+#       - mqtt
+#       - zigbee
+#       - grafana
+#       - influxdb
 #   iobroker:
 #     # container_name: iobroker
 #     image: buanet/iobroker:latest

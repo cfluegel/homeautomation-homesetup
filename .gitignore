@@ -7,3 +7,5 @@ data/zigbee2mqtt/log/*
 data/zigbee2mqtt/coordinator_backup.json
 data/mosquitto/data
 data/mosquitto/log
+data/homeassistant/
+data/nodered/
