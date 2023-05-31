@@ -74,7 +74,7 @@ devices:
   '0x588e81fffee2d642':
     friendly_name: Light_Arbeitszimmer_Heizung
   '0xa4c138e0ee201ff8':
-    friendly_name: Outlet_Wohnzimmer_eScooter
+    friendly_name: Outlet_Wohnzimmer_Fernseher
   '0xa4c138e60d038f36':
     friendly_name: Outlet_Wohnzimmer_Staubsauger
   '0x00158d000837fadb':
@@ -88,9 +88,9 @@ devices:
   '0x588e81fffef9f1f4':
     friendly_name: Light_Wohnzimmer_Stehlampe_Unten
   '0x04cf8cdf3c803335':
-    friendly_name: Outlet_Arbeitszimmer_Drucker
+    friendly_name: Outlet_Kueche_Geschirrspueler
   '0x54ef4410004e9df2':
-    friendly_name: Outlet_NotInUse1
+    friendly_name: Outlet_Kueche_Kuehlschrank
   '0x54ef4410004ea369':
     friendly_name: Outlet_Arbeitszimmer_Stehlampe
   '0x04cf8cdf3c802f6f':
@@ -101,6 +101,10 @@ devices:
     friendly_name: Light_Wohnzimmer_Esstisch
   '0xf4b3b1fffe86dfb3':
     friendly_name: '0xf4b3b1fffe86dfb3'
+  '0x847127fffea0ed9a':
+    friendly_name: Light_Kueche_Fenster
+  '0x00158d000926edf0':
+    friendly_name: TH_Kueche_Kuehlschrank
 groups:
   '1':
     friendly_name: Light_Wohnzimmer_Stehlampe
